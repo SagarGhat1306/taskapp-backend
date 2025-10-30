@@ -6,7 +6,13 @@ dotenv.config();
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',  // for local dev
+    'https://taskapp-frontend-five.vercel.app/login' // 👈 replace with your Vercel frontend URL
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use('/api/auth', require('./src/routes/auth'));
