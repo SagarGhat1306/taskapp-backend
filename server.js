@@ -9,7 +9,7 @@ connectDB();
 app.use(cors({
   origin: [
     'http://localhost:5173',  // for local dev
-    'https://taskapp-frontend-five.vercel.app/login' // replace with your Vercel frontend URL
+    'https://taskapp-frontend-five.vercel.app' // replace with your Vercel frontend URL
   ],
   credentials: true,
 }));
